@@ -1,1 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+marshall:
+    name: Marshall S
+    email: marshall@test.com
+    password_digest: <%= User.digest('password') %> #All fixture users have the same PW 'password'

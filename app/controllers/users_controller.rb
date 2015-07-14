@@ -22,10 +22,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #handle successful save
-      log_in @user
-      flash[:success] ="Welcome to Mwitter!"
-      redirect_to @user #equivalent to redirect_to user_url(@user)
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
+      #log_in @user
+      #flash[:success] ="Welcome to Mwitter!"
+      #redirect_to @user #equivalent to redirect_to user_url(@user)
     else
       render 'new'
     end
@@ -72,4 +74,7 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
   end
  
+  def create_activation_digest
+    # Create token
+  end
 end

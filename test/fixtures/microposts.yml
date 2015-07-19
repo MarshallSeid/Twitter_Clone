@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+teradata:
+  content: "I played 20 games of ping pong today!"
+  created_at: <%= 20.minutes.ago %>
+  user: marshall
+  
+
+apple:
+  content: "I am technically a fruit"
+  created_at: <%= 4.years.ago %>
+  user: marshall
+  
+google:
+  content: "We tend to search for things"
+  created_at: <%= 2.hours.ago %>
+  user: marshall
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: marshall
+  
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: marshall
+<% end %>
+
+ants: 
+  content: "Ants. Oh is that what you want?"
+  created_at: <%= 2.years.ago %>
+  user: archer
+
+zone:
+  content: "Welcome to the Danger Zone!"
+  created_at: <%= 5.days.ago %>
+  user: archer
+
+tone: 
+  content: "Sorry. Your words made sense, but your sarcastic tone did not."
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+van:
+  content: "This van's like rolling probable cause"
+  created_at: <%= 4.hours.ago %>
+  user: lana
